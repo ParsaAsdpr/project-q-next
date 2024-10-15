@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Box, ChakraProvider } from "@chakra-ui/react";
-import Theme from "@/core/utils/theme";
-import Navbar from "@/components/Navbar/Navbar";
+import theme from "@/core/utils/theme";
+import Header from "@/components/Navbar/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,8 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body dir="rtl">
-        <ChakraProvider theme={Theme}>
-          <Navbar />
+        <ChakraProvider theme={theme}>
+          <Header />
           <Box maxW="7xl" w="full" mx="auto">
             {children}
           </Box>

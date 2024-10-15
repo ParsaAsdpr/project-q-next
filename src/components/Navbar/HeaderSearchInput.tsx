@@ -1,7 +1,7 @@
 import { Icon, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { BiSearch } from "react-icons/bi";
 
-const NavbarSearchInput = () => {
+const HeaderSearchInput = ({colorMode}: {colorMode: 'light' | 'dark'}) => {
   return (
     <InputGroup>
       <Input
@@ -10,6 +10,9 @@ const NavbarSearchInput = () => {
         bg="primary.100"
         border="none"
         transition="all 0.3s, width 0.6s ease"
+        _placeholder={{
+          color: colorMode === "light" ? "#555" : "#ccc",
+        }}
         focusBorderColor="primary.800"
         _focus={{
           w: "250px",
@@ -22,4 +25,4 @@ const NavbarSearchInput = () => {
   );
 };
 
-export default NavbarSearchInput;
+export default HeaderSearchInput;

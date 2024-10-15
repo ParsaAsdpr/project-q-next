@@ -16,7 +16,7 @@ import { FaBell, FaRegBell } from "react-icons/fa";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const NotificationButton = () => {
+const NotificationButton = ({colorMode}: {colorMode: 'light' | 'dark'}) => {
   const anim = {
     hidden: {
       scale: 0,
@@ -50,7 +50,7 @@ const NotificationButton = () => {
         >
           <Stack
             fontSize={25}
-            color="#888"
+            color={colorMode === 'dark' ? "#ddd" : "#888"}
             cursor="pointer"
             position="relative"
             p={1.5}
@@ -87,7 +87,7 @@ const NotificationButton = () => {
         </MenuButton>
       </Tooltip>
 
-      <MenuList fontWeight="100" py={3} px={2} rounded={8}>
+      <MenuList fontWeight="100" py={3} px={2} rounded={8} bg={colorMode === "dark" ? "#2f2f2f" : "white"}>
         {["سلام"].map((notif) => (
           <HStack
             key={notif}
@@ -114,7 +114,7 @@ const NotificationButton = () => {
               _groupHover={{ color: "teal" }}
               transition="0.2s all"
               fontWeight={400}
-              color="#555"
+              color={colorMode === "dark" ? "gray.300" : "gray.600"}
               isTruncated
             >
               {notif}
@@ -123,9 +123,9 @@ const NotificationButton = () => {
         ))}
         <Button
           width="100%"
-          bg="#23a19430"
-          color="#1b887d"
-          _hover={{ bg: "#23a19420", color: "#10665d" }}
+          bg="primary.100"
+          color={colorMode === "light" ? "primary.900" : "primary.500"}
+          _hover={{ bg: "primary.900", color: "white" }}
           transition="0.2s"
           mt={1}
           fontWeight={500}
