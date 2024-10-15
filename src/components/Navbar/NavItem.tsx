@@ -7,15 +7,16 @@ const NavItem = ({
   label,
   icon,
   href,
-  colorMode
+  colorMode,
 }: {
   isActive?: boolean;
   label: string;
   icon: IconType;
   href: string;
-  colorMode: 'light' | 'dark';
+  colorMode: "light" | "dark";
 }) => {
-  const navItemColors = colorMode === 'light' ? ['#111', '#777'] : ['#fff', '#ccc'];
+  const navItemColors =
+    colorMode === "light" ? ["#111", "#777"] : ["#fff", "#ccc"];
   return (
     <ChakraLink
       as={Link}
@@ -27,7 +28,7 @@ const NavItem = ({
       borderLeft="1px solid #ddd"
       _hover={{
         textDecor: "none",
-        color: !isActive && (colorMode === 'light' ? "#555" : "#eee"),
+        color: !isActive && (colorMode === "light" ? "#555" : "#eee"),
       }}
     >
       <HStack
@@ -53,7 +54,7 @@ const NavItem = ({
         }}
       >
         <Icon as={icon} />
-        <Text>{label}</Text>
+        <Text display={{ base: "none", sm: "block", md: 'none', lg: 'block' }}>{label}</Text>
       </HStack>
     </ChakraLink>
   );
