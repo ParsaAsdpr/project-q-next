@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Box, ChakraProvider } from "@chakra-ui/react";
-import theme from "@/core/utils/theme";
+import theme from "@/core/libs/theme";
 import Header from "@/components/Navbar/Header";
 
 export const metadata: Metadata = {

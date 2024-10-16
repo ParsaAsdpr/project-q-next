@@ -11,7 +11,7 @@ import React from "react";
 import HeaderSearchInput from "./HeaderSearchInput";
 import Link from "next/link";
 import NotificationButton from "./NotificationButton";
-import theme from "@/core/utils/theme";
+import theme from "@/core/libs/theme";
 import Navbar from "./Navbar";
 import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
