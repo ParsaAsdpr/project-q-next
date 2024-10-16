@@ -3,6 +3,8 @@ import "./globals.css";
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import theme from "@/core/libs/theme";
 import Header from "@/components/Navbar/Header";
+import { Suspense } from "react";
+import Loading from "@/components/Loading";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +22,7 @@ export default function RootLayout({
         <ChakraProvider theme={theme}>
           <Header />
           <Box maxW="7xl" w="full" mx="auto">
-            {children}
+            <Suspense fallback={<Loading />}>{children}</Suspense>
           </Box>
         </ChakraProvider>
       </body>

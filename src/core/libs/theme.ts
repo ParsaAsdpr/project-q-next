@@ -2,19 +2,12 @@
 import { extendTheme } from "@chakra-ui/react";
 import { StyleFunctionProps } from "@chakra-ui/theme-tools";
 const theme = extendTheme({
-  initialColorMode: 'system',
+  initialColorMode: "system",
   useSystemColorMode: true,
   direction: "rtl",
   fonts: {
     heading: "iranyekan",
     body: "iranyekan",
-  },
-  components: {
-    Icon: {
-      baseStyle: {
-        fontSize: 18, // Normally, it is "semibold"
-      },
-    },
   },
   colors: {
     primary: {
@@ -27,6 +20,13 @@ const theme = extendTheme({
       700: "#4ecf8c",
       800: "#38ba77",
       900: "#27a162",
+    },
+  },
+  components: {
+    Icon: {
+      baseStyle: {
+        fontSize: 18, // Normally, it is "semibold"
+      },
     },
   },
   styles: {
