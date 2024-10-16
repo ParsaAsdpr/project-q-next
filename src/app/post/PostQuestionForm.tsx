@@ -1,7 +1,7 @@
 "use client";
-import Form from "@/components/common/Form";
+import Form from "@/components/common/Form/Form";
 import schema from "./schema";
-import InputField from "@/components/common/InputField";
+import InputField from "@/components/common/Form/InputField";
 import useToast from "@/core/hooks/useToast";
 
 const fields = [
@@ -17,7 +17,7 @@ const fields = [
     id: "body",
     label: "متن",
     placeholder: "متن خود را وارد کنید",
-    type: "textarea",
+    type: "texteditor",
   },
 ];
 const PostQuestionForm = () => {
@@ -38,16 +38,21 @@ const PostQuestionForm = () => {
       description: err,
     });
   };
-  
+
+  const handleSubmit = (data: unknown) => {
+    console.log(data);
+  };
+
   return (
     <Form
       schema={schema}
       endpoint="/api/answers"
       onSuccess={handleSuccess}
       onError={handleError}
+      handleSubmit={handleSubmit}
     >
       {fields.map((field, index) => (
-        <InputField key={index} field={field} />
+        <InputField key={index} {...field} />
       ))}
     </Form>
   );
