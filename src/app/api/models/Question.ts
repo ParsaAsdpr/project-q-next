@@ -8,6 +8,11 @@ export const questionSchema = new Schema<IQuestion>({
     minlength: 20,
     required: true,
   },
+  categories: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: "Category",
+    default: [],
+  },
   body: {
     type: String,
     minlength: 30,
