@@ -20,7 +20,7 @@ const TextEditor = ({
       [{ header: [1, 2, false] }],
       ["bold", "italic", "underline", "strike"],
       [{ list: "ordered" }, { list: "bullet" }],
-      ["link", "image"],
+      ["link"],
     ],
   };
 
@@ -33,7 +33,6 @@ const TextEditor = ({
     "list",
     "bullet",
     "link",
-    "image",
   ];
 
   return (
@@ -54,6 +53,9 @@ const TextEditor = ({
               textAlign: "right",
               fontFamily: "iranyekan",
             },
+            ".ql-editor li:not(.ql-direction-rtl)::before": {
+              marginLeft: 0,
+            }
           }}
         >
           <ReactQuill

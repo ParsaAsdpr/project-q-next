@@ -31,7 +31,7 @@ const Header = () => {
         <HStack>
           <Box
             flexShrink={0}
-            bg={colorMode === "dark" ? "primary.900" : "primary.500"}
+            bg={colorMode === "dark" ? "brand.900" : "brand.500"}
             h={14}
             w={28}
             borderBottomRadius={7}
@@ -48,11 +48,11 @@ const Header = () => {
             href="/login"
             variant="outline"
             fontSize="xs"
-            borderColor="primary.900"
-            textColor="primary.900"
+            borderColor="brand.900"
+            textColor="brand.900"
             rounded="full"
             _hover={{
-              bg: "primary.900",
+              bg: "brand.900",
               color: "white",
             }}
           >
@@ -60,7 +60,7 @@ const Header = () => {
           </Button>
           <IconButton
             aria-label="Toggle Dark Mode"
-            colorScheme="primary.500"
+            colorScheme="brand.500"
             icon={colorMode === "dark" ? <MdDarkMode /> : <CiLight />}
             onClick={() =>
               setColorMode(colorMode === "light" ? "dark" : "light")

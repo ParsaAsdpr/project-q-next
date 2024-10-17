@@ -51,7 +51,7 @@ const Form = ({
   return (
     <chakra.form onSubmit={methods.handleSubmit(onSubmit)} {...rest}>
       <FormProvider {...methods}>{children}</FormProvider>
-      <Button type="submit" colorScheme="primary">
+      <Button type="submit" colorScheme="brand">
         ثبت
       </Button>
     </chakra.form>

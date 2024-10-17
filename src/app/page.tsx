@@ -1,5 +1,7 @@
-import QuestionCard from "@/components/Question/QuestionCard";
+import Categories from "@/components/Categories";
+import QuestionCard from "@/components/Question/QuestionCard/QuestionCard";
 import IQuestion from "@/core/types/IQuestion";
+import { Grid, GridItem } from "@chakra-ui/react";
 
 export default async function Home() {
   const data: IQuestion[] = await fetch(`${process.env.API_URL}/api/questions`)
@@ -7,10 +9,16 @@ export default async function Home() {
     .catch((err) => console.log(err));
 
   return (
-    <div>
+    <Grid templateAreas={`"cats card card ads"`} mt={6} gridGap={4}>
+      <GridItem area="cats">
+        <Categories />
+      </GridItem>
       {data.map((question) => (
-        <QuestionCard key={question._id} question={question}></QuestionCard>
+        <GridItem key={question._id} area="card">
+          <QuestionCard question={question}></QuestionCard>
+        </GridItem>
       ))}
-    </div>
+      <GridItem area="ads"></GridItem>
+    </Grid>
   );
 }

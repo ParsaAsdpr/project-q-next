@@ -101,7 +101,7 @@ const NotificationButton = ({colorMode}: {colorMode: 'light' | 'dark'}) => {
             spacing={3}
             mb={1}
           >
-            {/* PRIMARY COLOR */}
+            {/* brand COLOR */}
             <Icon
               fontSize={18}
               as={FaBell}
@@ -123,9 +123,9 @@ const NotificationButton = ({colorMode}: {colorMode: 'light' | 'dark'}) => {
         ))}
         <Button
           width="100%"
-          bg="primary.100"
-          color={colorMode === "light" ? "primary.900" : "primary.500"}
-          _hover={{ bg: "primary.900", color: "white" }}
+          bg="brand.100"
+          color={colorMode === "light" ? "brand.900" : "brand.500"}
+          _hover={{ bg: "brand.900", color: "white" }}
           transition="0.2s"
           mt={1}
           fontWeight={500}

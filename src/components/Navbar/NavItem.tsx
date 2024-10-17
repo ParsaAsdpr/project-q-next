@@ -42,7 +42,7 @@ const NavItem = ({
             bottom: "-50%",
             right: "50%",
             transform: "translateX(50%)",
-            bg: "primary.500",
+            bg: "brand.500",
             rounded: "full",
             transition: "0.2s ease-out",
             h: 1.5,

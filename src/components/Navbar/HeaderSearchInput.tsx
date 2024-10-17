@@ -7,19 +7,19 @@ const HeaderSearchInput = ({colorMode}: {colorMode: 'light' | 'dark'}) => {
       <Input
         fontSize="xs"
         placeholder="دوست داری چی بدونی؟"
-        bg="primary.100"
+        bg="brand.100"
         border="none"
         transition="all 0.3s, width 0.6s ease"
         _placeholder={{
           color: colorMode === "light" ? "#555" : "#ccc",
         }}
-        focusBorderColor="primary.800"
+        focusBorderColor="brand.800"
         _focus={{
           w: "250px",
         }}
       />
       <InputLeftElement>
-        <Icon as={BiSearch} color="primary.800" />
+        <Icon as={BiSearch} color="brand.800" />
       </InputLeftElement>
     </InputGroup>
   );

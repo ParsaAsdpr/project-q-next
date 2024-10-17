@@ -10,17 +10,21 @@ const theme = extendTheme({
     body: "iranyekan",
   },
   colors: {
-    primary: {
+    brand: {
       50: "#59dc9810",
       100: "#59dc9840",
       200: "#59dc9870",
       300: "#59dc9899",
       400: "#59dc98b3",
       500: "#59dc98",
+      600: "#59dc98",
       700: "#4ecf8c",
       800: "#38ba77",
       900: "#27a162",
     },
+    'text-primary': '#333',
+    'text-secondary': '#666',
+    'text-light': '#999',
   },
   components: {
     Icon: {
