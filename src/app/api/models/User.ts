@@ -36,9 +36,8 @@ export const userSchema = new Schema<IUser>({
     type: Boolean,
     default: true,
   },
-  lastLogin: {
-    type: Date,
-  },
+  lastIP: String,
+  lastLogin: Date,
   createdAt: {
     type: Date,
     default: Date.now,

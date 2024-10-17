@@ -2,7 +2,6 @@ import connectDB from "@/core/libs/db";
 import { NextRequest, NextResponse as res } from "next/server";
 import User, { comparePassword, createToken } from "../models/User";
 import schema from "./schema";
-
 export const POST = async (req: NextRequest) => {
   try {
     await connectDB();
@@ -24,7 +23,12 @@ export const POST = async (req: NextRequest) => {
     if (!isPasswordCorrect)
       return res.json({ error: "Incorrect password" }, { status: 400 });
 
-    return res.json({ token: createToken(user) }, { status: 200 });
+    const ip =
+      req.headers.get("x-forwarded-for")?.split(",")[0] || req.ip || "Unknown";
+    user.lastIP = ip;
+    await user.save();
+
+    return res.json({ token: createToken(user!) }, { status: 200 });
   } catch (err) {
     console.log(err);
     res.json({ error: err }, { status: 500 });

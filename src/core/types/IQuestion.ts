@@ -1,11 +1,15 @@
+import mongoose from "mongoose";
+import IUser from "./IUser";
+import IAnswer from "./IAnswer";
+
 interface IQuestion {
   _id: string;
   title: string;
   body: string;
-  user: string;
+  user: mongoose.Schema.Types.ObjectId | IUser;
   upvotes: number;
   downvotes: number;
-  answers: string[];
+  answers: mongoose.Schema.Types.ObjectId[] | IAnswer[];
   createdAt: Date;
   updatedAt: Date;
 }

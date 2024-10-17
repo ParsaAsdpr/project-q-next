@@ -11,6 +11,7 @@ interface IUser {
     }
     isOnline: boolean;
     isActive: boolean;
+    lastIP: string;
     lastLogin: Date;
     createdAt: Date;
     updatedAt: Date;
