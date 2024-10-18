@@ -2,11 +2,12 @@ import connectDB from "@/core/libs/db";
 import schema from "./schema";
 import { NextRequest, NextResponse as res } from "next/server";
 import User, { createToken, hashPassword } from "../models/User";
+import Role from "../models/Role";
 
 export const GET = async () => {
   try {
     await connectDB();
-    const users = await User.find().select("-password");
+    const users = await User.find().select("-password").populate("role");
     if (!users || users.length === 0)
       return res.json({ error: "No Data Found" }, { status: 204 });
     return res.json(users, { status: 200 });
@@ -43,6 +44,15 @@ export const POST = async (req: NextRequest) => {
         { error: "User with specified email already exists" },
         { status: 400 }
       );
+
+    if (parsedBody.data.role) {
+      const roleExists = await Role.findById(parsedBody.data.role);
+      if (!roleExists)
+        return res.json(
+          { error: "The specified role does not exist" },
+          { status: 400 }
+        );
+    }
 
     const password = await hashPassword(parsedBody.data.password);
 

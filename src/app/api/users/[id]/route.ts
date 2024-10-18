@@ -8,7 +8,7 @@ export const GET = async (
 ) => {
   try {
     await connectDB();
-    const user = await User.findById(params.id).select("-password");
+    const user = await User.findById(params.id).select("-password").populate('role');
     if (!user) return res.json({ error: "User not found" }, { status: 404 });
     return res.json(user, { status: 200 });
   } catch (error) {

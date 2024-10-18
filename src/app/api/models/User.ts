@@ -17,16 +17,21 @@ export const userSchema = new Schema<IUser>({
     maxlength: 50,
     required: true,
   },
+  password: {
+    type: String,
+    minlength: 8,
+    required: true,
+  },
+  role: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Role",
+    default: "67125090a7b13e4444c63ddb",
+  },
   profile: {
     name: String,
     avatar: String,
     bio: String,
     occupation: String,
-  },
-  password: {
-    type: String,
-    minlength: 8,
-    required: true,
   },
   isOnline: {
     type: Boolean,
